@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Analyses</title>
+    <title>Análises Literárias</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Titulo</h1>
+
+<header>
+    <span class="site-name">
+        <span data-lang="pt">Análises Literárias</span>
+        <span data-lang="en">Literary Analyses</span>
+    </span>
+    <button class="lang-toggle" onclick="toggleLang()">EN / PT</button>
+</header>
+
+<main>
+
+    <div class="book-header">
+        <p class="book-label">
+            <span data-lang="pt">Todos os livros</span>
+            <span data-lang="en">All books</span>
+        </p>
+        <h1>
+            <span data-lang="pt">O que eu li</span>
+            <span data-lang="en">What I've read</span>
+        </h1>
+    </div>
+
+    <section>
+        <ul class="book-list">
+            <li>
+                <a href="books/crime-e-castigo.html">
+                    <span class="book-list-title">Crime e Castigo</span>
+                    <span class="book-list-author">Fiódor Dostoiévski</span>
+                </a>
+            </li>
+            <!-- adicione novos livros aqui seguindo o mesmo padrão -->
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+</footer>
+
+<script>
+    function toggleLang() {
+        document.body.classList.toggle('lang-en');
+        document.documentElement.lang = document.body.classList.contains('lang-en') ? 'en' : 'pt-BR';
+    }
+</script>
+
 </body>
 </html>

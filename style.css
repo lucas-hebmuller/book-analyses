@@ -1,0 +1,221 @@
+/* ════════════════════════════════════════
+   style.css — Análises Literárias
+   Shared across all book pages
+   ════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ── Variables ── */
+:root {
+    --bg: #f7f4ef;
+    --text: #1a1a18;
+    --muted: #6b6760;
+    --accent: #8b2020;
+    --rule: #d6cfc4;
+    --max-width: 720px;
+}
+
+/* ── Reset ── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ── Base ── */
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.85;
+}
+
+/* ── Header ── */
+header {
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.site-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.lang-toggle {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    padding: 0.35rem 0.85rem;
+    cursor: pointer;
+    font-family: 'Source Serif 4', serif;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.lang-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ── Main layout ── */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+}
+
+/* ── Book header ── */
+.book-header {
+    margin-bottom: 3.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+.book-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+}
+
+.book-author {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+/* ── Sections ── */
+section {
+    margin-bottom: 3.5rem;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+/* ── Symbol entries ── */
+.symbol {
+    margin-bottom: 2rem;
+}
+
+.symbol-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+/* ── Character entries ── */
+.character {
+    margin-bottom: 2.5rem;
+    padding-left: 1.2rem;
+    border-left: 2px solid var(--rule);
+}
+
+.character-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.character-role {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+}
+
+/* ── Footer ── */
+footer {
+    border-top: 1px solid var(--rule);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: inherit;
+}
+
+/* ── Book list (index.html) ── */
+.book-list {
+    list-style: none;
+    border-top: 1px solid var(--rule);
+}
+
+.book-list li {
+    border-bottom: 1px solid var(--rule);
+}
+
+.book-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 2rem;
+    padding: 1.1rem 0;
+    text-decoration: none;
+    color: var(--text);
+    transition: color 0.15s;
+}
+
+.book-list a:hover {
+    color: var(--accent);
+}
+
+.book-list-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+}
+
+.book-list-author {
+    font-size: 0.85rem;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+/* ── Language toggle logic ── */
+[data-lang="en"] { display: none; }
+body.lang-en [data-lang="pt"] { display: none; }
+body.lang-en [data-lang="en"] { display: block; }
+body.lang-en .character [data-lang="en"] { display: block; }
+span[data-lang] { display: inline; }
+body.lang-en span[data-lang="pt"] { display: none; }
+body.lang-en span[data-lang="en"] { display: inline; }
