@@ -8,50 +8,23 @@
 </head>
 <body>
 
-<header>
-    <span class="site-name">
-        <span data-lang="pt">Análises Literárias</span>
-        <span data-lang="en">Literary Analyses</span>
-    </span>
-    <button class="lang-toggle" onclick="toggleLang()">EN / PT</button>
-</header>
+    <header>
+        <a href="index.html">Análises Literárias</a>
+    </header>
 
-<main>
+    <main>
+        <h1>O que eu li</h1>
 
-    <div class="book-header">
-        <p class="book-label">
-            <span data-lang="pt">Todos os livros</span>
-            <span data-lang="en">All books</span>
-        </p>
-        <h1>
-            <span data-lang="pt">O que eu li</span>
-            <span data-lang="en">What I've read</span>
-        </h1>
-    </div>
-
-    <section>
-        <ul class="book-list">
+        <ul>
             <li>
-                <a href="books/crime-e-castigo.html">
-                    <span class="book-list-title">Crime e Castigo</span>
-                    <span class="book-list-author">Fiódor Dostoiévski</span>
-                </a>
+                <a href="books/crime-e-castigo/index.html">Crime e Castigo</a>
+                — Fiódor Dostoiévski
             </li>
-            <!-- adicione novos livros aqui seguindo o mesmo padrão -->
         </ul>
-    </section>
+    </main>
 
-</main>
-
-<footer>
-</footer>
-
-<script>
-    function toggleLang() {
-        document.body.classList.toggle('lang-en');
-        document.documentElement.lang = document.body.classList.contains('lang-en') ? 'en' : 'pt-BR';
-    }
-</script>
+    <footer>
+    </footer>
 
 </body>
 </html>
